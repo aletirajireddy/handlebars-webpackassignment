@@ -1,0 +1,88 @@
+$clr-bg: #f0f0cc;
+
+html {
+    font-size: 62.5%;
+  }
+  
+  *,
+  *:after,
+  *:before {
+    box-sizing: border-box;
+  }
+  
+  html,
+  body {
+    height: 100%;
+  }
+  
+  body {
+    font-family: sans-serif;
+    font-size: 1.6rem;
+  }
+  
+  .user-list {
+    padding: 0;
+
+    @media screen and (min-width: 768px) {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 80%;
+      margin: 0 auto;
+    }
+
+    .user-item {
+      list-style: none;
+    }
+  
+    .user {
+      display: flex;
+      max-width: 420px;
+      border: 1px solid #959595;
+      border-radius: 3px;
+      margin-bottom: 0.5rem;
+      margin-right: 0.5rem;
+      text-decoration: none;
+      color: black;
+      overflow: hidden;
+  
+      &:link,
+      &:visited,
+      &:active,
+      &:hover,
+      &:focus {
+        color: black;
+      }
+      .user-details {
+        width: 100%;
+        margin-left: 1.5rem;
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 1.5rem;
+      }
+  
+      .time-str {
+        font-size: 1.4rem;
+      }
+  
+      .user-info {
+        opacity: 1;
+        visibility: visible;
+        transition: all 0.3s;
+        transform: translateY(0px);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+  
+      &.active {
+        background: $clr-bg;
+      }
+    }
+  }
+  
+  .user:not(.active) .user-info {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(30px);
+  }
+  

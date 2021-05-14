@@ -1,0 +1,17 @@
+<ul class="user-list">
+    {{#each results as |item|}}
+    <li class="user-item">
+        <a href="#" class="user" data-id="{{item.id}}" data-created="{{item.createdAt}}">
+        <img src="https://randomuser.me/api/portraits/men/{{random}}.jpg" alt="" class="user-img">
+        <div class="user-details">
+            <h3 class="user-name">{{item.name}}</h3>
+            <div class="user-info">
+            <div class="user-id">
+                <span>Id:</span>{{item.id}}</div>
+                <div class="user-create"><span>Created on:</span> {{cdate item.createdAt}}</div>
+            </div>
+        </div>
+        </a>
+        </li>
+    {{/each}}
+</ul>
